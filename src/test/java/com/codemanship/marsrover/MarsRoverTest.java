@@ -22,8 +22,8 @@ public class MarsRoverTest {
 
         String initialResponse = "The rover has been dropped at coordinates (1,2) facing South";
         /*
-        Given: 5,6,N
-        Then: The rover has been dropped at coordinates (5,6) facing North
+        Given: 1,2,S
+        Then: The rover has been dropped at coordinates (1,2) facing South
          */
         MarsRover marsRover = new MarsRover();
         assertEquals(initialResponse, marsRover.initialise("1,2,S"));
