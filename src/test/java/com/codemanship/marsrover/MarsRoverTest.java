@@ -56,4 +56,20 @@ public class MarsRoverTest {
         marsRover.turnRight();
         assertEquals("South", marsRover.getCurrentDirection());
     }
+
+    @Test
+    void can_run_basic_command() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.initialise("1,2,E");
+        marsRover.runCommand("R");
+        assertEquals("South", marsRover.getCurrentDirection());
+    }
+
+    @Test
+    void can_run_set_of_commands() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.initialise("1,2,E");
+        marsRover.runCommand("RRRR");
+        assertEquals("East", marsRover.getCurrentDirection());
+    }
 }

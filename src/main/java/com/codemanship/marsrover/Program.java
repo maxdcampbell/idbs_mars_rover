@@ -10,8 +10,15 @@ public class Program {
 
         System.out.println("Enter target coordinates and direction:");
         String initilisationString = myObj.nextLine();
+
         String confirmation = rover.initialise(initilisationString);
         System.out.println(confirmation);
+        while (!initilisationString.equalsIgnoreCase("x")) {
+            initilisationString = myObj.nextLine();
+            rover.runCommand(initilisationString);
+        }
+
+        System.out.println("Thank you for visiting!");
     }
 
 }
