@@ -2,7 +2,7 @@ package com.codemanship.marsrover;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MarsRoverTest {
     @Test
@@ -27,5 +27,19 @@ public class MarsRoverTest {
          */
         MarsRover marsRover = new MarsRover();
         assertEquals(initialResponse, marsRover.initialise("1,2,S"));
+    }
+
+    @Test
+    void initialisation_requires_correct_format() {
+        MarsRover marsRover = new MarsRover();
+
+        IllegalArgumentException thrown = assertThrows(
+                IllegalArgumentException.class,
+                () -> marsRover.initialise("W,1,2"),
+                "Expected initialise() to throw, but it didn't"
+        );
+
+        assertTrue(thrown.getMessage().contains("Invalid initialisation string"));
+
     }
 }

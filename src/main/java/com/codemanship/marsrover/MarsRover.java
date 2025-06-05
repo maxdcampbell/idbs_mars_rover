@@ -1,5 +1,7 @@
 package com.codemanship.marsrover;
 
+import java.util.regex.Pattern;
+
 public class MarsRover {
     private int xPos;
     private int yPos;
@@ -14,6 +16,11 @@ public class MarsRover {
      * @return initialisation
      */
     public String initialise(String input) {
+
+        final Pattern pattern = Pattern.compile("[0-9],[0-9],[A-Za-z]");
+        if (!pattern.matcher(input).matches()) {
+            throw new IllegalArgumentException("Invalid initialisation string. Needs to be in the format 'x,y,{direction} eg. '1,2,N'");
+        }
         String[] commands = input.split(",");
         xPos = Integer.parseInt(commands[0]);
         yPos = Integer.parseInt(commands[1]);
