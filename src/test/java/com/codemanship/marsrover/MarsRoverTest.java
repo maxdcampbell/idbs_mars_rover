@@ -41,5 +41,11 @@ public class MarsRoverTest {
 
         assertTrue(thrown.getMessage().contains("Invalid initialisation string"));
 
+
+    @Test
+    void can_display_rover_information() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.initialise("1,2,S");
+        assertEquals("The rover is at (1,2) facing South", marsRover.getRoverInformation());
     }
 }

@@ -43,4 +43,8 @@ public class MarsRover {
                 return "invalid direction";
         }
     }
+
+    public String getRoverInformation() {
+        return String.format("The rover is at (%d,%d) facing %s", this.xPos, this.yPos, this.direction);
+    }
 }
