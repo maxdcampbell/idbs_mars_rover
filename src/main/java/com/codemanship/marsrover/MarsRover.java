@@ -37,6 +37,27 @@ public class MarsRover {
         }
     }
 
+    public String getCurrentDirection() {
+        return this.direction;
+    }
+
+    public void turnRight() {
+        switch (this.direction) {
+            case "North":
+                direction = "East";
+                break;
+            case "East":
+                direction = "South";
+                break;
+            case "South":
+                direction = "West";
+                break;
+            case "West":
+                direction = "North";
+                break;
+        }
+    }
+
     public String getRoverInformation() {
         return String.format("The rover is at (%d,%d) facing %s", this.xPos, this.yPos, this.direction);
     }

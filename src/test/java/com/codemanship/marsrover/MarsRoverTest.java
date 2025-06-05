@@ -35,4 +35,12 @@ public class MarsRoverTest {
         marsRover.initialise("1,2,S");
         assertEquals("The rover is at (1,2) facing South", marsRover.getRoverInformation());
     }
+
+    @Test
+    void can_turn_right() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.initialise("1,2,E");
+        marsRover.turnRight();
+        assertEquals("South", marsRover.getCurrentDirection());
+    }
 }
