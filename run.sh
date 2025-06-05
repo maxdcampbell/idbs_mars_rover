@@ -1,3 +1,4 @@
+rm -rf idbs_mars_rover
 git clone https://github.com/maxdcampbell/idbs_mars_rover
 cd idbs_mars_rover
 mvn package
