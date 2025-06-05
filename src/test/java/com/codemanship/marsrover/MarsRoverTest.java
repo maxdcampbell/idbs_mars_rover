@@ -40,7 +40,7 @@ public class MarsRoverTest {
         );
 
         assertTrue(thrown.getMessage().contains("Invalid initialisation string"));
-
+    }
 
     @Test
     void can_display_rover_information() {
