@@ -28,4 +28,11 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover();
         assertEquals(initialResponse, marsRover.initialise("1,2,S"));
     }
+
+    @Test
+    void can_display_rover_information() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.initialise("1,2,S");
+        assertEquals("The rover is at (1,2) facing South", marsRover.getRoverInformation());
+    }
 }
